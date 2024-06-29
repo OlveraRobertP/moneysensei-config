@@ -2,7 +2,7 @@ logging:
   level:
     root: INFO
     org.springframework: WARN
-    com.yourcompany: DEBUG
+    com.robolverap: DEBUG
 
 management:
   endpoints:
@@ -19,6 +19,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.uuid}
 
 # spring:
 #   security:
