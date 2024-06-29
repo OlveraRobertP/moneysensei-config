@@ -4,7 +4,7 @@ spring:
 
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false #Indica que este servicio (el servidor Eureka) no debe registrarse a sí mismo como un cliente. Esto es porque es el servidor, no un cliente.
+    fetchRegistry: false # Indica que este servicio no debe intentar obtener información del registro de Eureka. De nuevo, esto es porque es el servidor, no necesita obtener información de sí mismo.
   server:
-    waitTimeInMsWhenSyncEmpty: 0
+    waitTimeInMsWhenSyncEmpty: 0 #Util cuando solo hay una instancia de Eureka, Establece el tiempo de espera a 0 milisegundos cuando el registro está vacío durante la sincronización.

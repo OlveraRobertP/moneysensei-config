@@ -8,18 +8,18 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics #Expone los endpoints de Actuator para health, info y metrics.
   endpoint:
     health:
-      show-details: always
+      show-details: always #Configura el endpoint de health para mostrar siempre detalles completos.
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: false #si esta en tre Usa la dirección IP en lugar del hostname al registrarse con Eureka.
+    instance-id: ${spring.application.name}:${random.uuid} #Genera un ID único para cada instancia del servicio.
 
 # spring:
 #   security:
@@ -28,10 +28,11 @@ eureka:
 #       password: ${SECURITY_PASSWORD:password}
 
 server:
-  port: 0  # Puerto aleatorio
+  port: 0  # Asigna un puerto aleatorio al iniciar la aplicación.
   servlet:
-    context-path: /api
+    context-path: /api #Establece un prefijo "/api" para todas las rutas del servicio.
+
 
 spring:
   jackson:
-    time-zone: America/Mexico_City
+    time-zone: America/Mexico_City #Configura la zona horaria para la serialización/deserialización JSON a la de la Ciudad de México.
