@@ -8,3 +8,7 @@ eureka:
     fetchRegistry: false # Indica que este servicio no debe intentar obtener información del registro de Eureka. De nuevo, esto es porque es el servidor, no necesita obtener información de sí mismo.
   server:
     waitTimeInMsWhenSyncEmpty: 0 #Util cuando solo hay una instancia de Eureka, Establece el tiempo de espera a 0 milisegundos cuando el registro está vacío durante la sincronización.
+
+server:
+  servlet:
+    context-path: / #regresa el contexto por default
