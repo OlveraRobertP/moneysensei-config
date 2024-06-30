@@ -15,11 +15,15 @@ management:
 
 eureka:
   client:
+    registerWithEureka: true #para que el cliente se registre con el servidor Eureka.
+    fetchRegistry: true #para que el cliente obtenga el registro de Eureka.
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: false #si esta en tre Usa la dirección IP en lugar del hostname al registrarse con Eureka.
+    prefer-ip-address: true #si esta en tre Usa la dirección IP en lugar del hostname al registrarse con Eureka.
     instance-id: ${spring.application.name}:${random.uuid} #Genera un ID único para cada instancia del servicio.
+    leaseRenewalIntervalInSeconds: 30 #Intervalo en segundos en el que el cliente debe enviar renovaciones al servidor Eureka.
+    leaseExpirationDurationInSeconds: 90 #Tiempo en segundos tras el cual el servidor Eureka caducará la instancia si no recibe renovaciones.
 
 # spring:
 #   security:
