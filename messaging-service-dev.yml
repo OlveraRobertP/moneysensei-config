@@ -2,6 +2,6 @@ twilio:
   account:
     sid: AC878e0cd20d3ffe5450825306fce7dc5f
   auth: 
-    token: 3b174c2f935d8a0c130ecae7966131db
+    token: d9d09d195dfbd90ff20f8cbc4776aa9a
   phone:
     number: whatsapp:+14155238886
