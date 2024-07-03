@@ -12,6 +12,12 @@ spring:
             - Path=/test-service/**
           filters:
             - StripPrefix=1
+        - id: messaging-service
+          uri: lb://MESSAGING-SERVICE
+          predicates:
+            - Path=/messaging/**
+          filters:
+            - StripPrefix=1
             
 server:
   port: 8080
